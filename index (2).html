@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic Analog Clock</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-200">
+
+  <!-- Clock Container -->
+  <div class="relative w-80 h-80 bg-white rounded-full shadow-lg border-4 border-gray-800 flex items-center justify-center">
+    <!-- Clock Numbers -->
+    <div class="absolute text-2xl font-bold text-gray-800" style="top: 5%; left: 50%; transform: translateX(-50%);">12</div>
+    <div class="absolute text-2xl font-bold text-gray-800" style="bottom: 5%; left: 50%; transform: translateX(-50%);">6</div>
+    <div class="absolute text-2xl font-bold text-gray-800" style="top: 50%; left: 5%; transform: translateY(-50%);">9</div>
+    <div class="absolute text-2xl font-bold text-gray-800" style="top: 50%; right: 5%; transform: translateY(-50%);">3</div>
+
+    <!-- Minute Markers -->
+    <div class="absolute w-full h-full">
+      <!-- Generate 60 markers around the clock -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="marker w-1 h-4 bg-gray-800 rounded-full" style="transform: rotate(0deg) translateY(-50%);"></div>
+      </div>
+      <!-- Additional markers... -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="marker w-1 h-2 bg-gray-800 rounded-full" style="transform: rotate(6deg) translateY(-50%);"></div>
+      </div>
+      <!-- Repeat this div for each marker (60 total, one every 6 degrees) -->
+    </div>
+    
+    <!-- Clock Hands -->
+    <div id="hour" class="hand hour absolute bg-gray-800 h-16 w-1.5 origin-bottom transform transition-transform"></div>
+    <div id="minute" class="hand minute absolute bg-gray-800 h-24 w-1 origin-bottom transform transition-transform"></div>
+    <div id="second" class="hand second absolute bg-red-500 h-28 w-0.5 origin-bottom transform transition-transform"></div>
+
+    <!-- Center Circle -->
+    <div class="center-point absolute w-4 h-4 bg-red-500 rounded-full"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

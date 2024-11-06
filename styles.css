@@ -1,0 +1,28 @@
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: rotate(90deg);
+    transition: transform 0.05s cubic-bezier(0.4, 2.3, 0.3, 1);
+  }
+  
+  .hour {
+    height: 4rem;
+  }
+  
+  .minute {
+    height: 6rem;
+  }
+  
+  .second {
+    height: 7rem;
+  }
+  
+  .marker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-origin: bottom center;
+  }
+  
